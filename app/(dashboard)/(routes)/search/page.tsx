@@ -1,7 +1,12 @@
 import React from "react";
+import Categories from "../../_components/categories";
 
 const SearchPage = () => {
-  return <div>page</div>;
+  return (
+    <div>
+      <Categories />
+    </div>
+  );
 };
 
 export default SearchPage;
