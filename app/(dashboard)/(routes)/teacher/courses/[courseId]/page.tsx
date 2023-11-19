@@ -5,6 +5,9 @@ import { redirect } from "next/navigation";
 import { IconBadge } from "@/components/icon-badge";
 import { LayoutDashboard } from "lucide-react";
 import TitleForm from "./_components/title-form";
+import DescriptionForm from "./_components/description-form";
+import ImageForm from "./_components/image-form";
+import ChapterForm from "./_components/chapter-form";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
@@ -39,6 +42,15 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
             <h2 className="text-xl">Customise your course</h2>
           </div>
           <TitleForm initialData={course} courseId={course.id}></TitleForm>
+          <DescriptionForm initialData={course} courseId={course.id} />
+          <ImageForm initialData={course} courseId={course.id}></ImageForm>
+        </div>
+        <div>
+          <div className="flex items-center gap-x-2">
+            <IconBadge icon={LayoutDashboard} />
+            <h2 className="text-xl">Course chapters</h2>>
+          </div>
+            <ChapterForm />
         </div>
       </div>
     </div>
